@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>POLIPONI 2026</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --primary:#6a00ff;
+  --primary2:#9b00ff;
+  --bg:#f4f6fb;
+  --text:#222;
+  --muted:#777;
+  --white:#fff;
+  --shadow:0 15px 35px rgba(0,0,0,0.08);
+  --radius:24px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+  line-height:1.7;
+}
+
+/* BACKGROUND */
+.bg-blur{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  overflow:hidden;
+}
+
+.bg-blur::before,
+.bg-blur::after{
+  content:'';
+  position:absolute;
+  width:350px;
+  height:350px;
+  border-radius:50%;
+  filter:blur(90px);
+  opacity:.18;
+}
+
+.bg-blur::before{
+  background:#6a00ff;
+  top:-100px;
+  left:-100px;
+}
+
+.bg-blur::after{
+  background:#9b00ff;
+  bottom:-120px;
+  right:-100px;
+}
+
+/* HERO */
+.hero{
+  position:relative;
+  height:420px;
+  overflow:hidden;
+  display:flex;
+  align-items:flex-end;
+  padding:35px;
+  background:url('POSTER-KAMU.jpg') center/cover no-repeat;
+}
+
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.2));
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  color:white;
+}
+
+/* LOGO */
+.logo{
+  width:110px;
+  margin-bottom:15px;
+  display:block;
+  filter:drop-shadow(0 5px 10px rgba(0,0,0,0.4));
+}
+
+.badge{
+  display:inline-block;
+  padding:10px 18px;
+  border-radius:999px;
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(10px);
+  font-size:13px;
+  font-weight:600;
+  margin-bottom:16px;
+}
+
+.hero h1{
+  font-size:42px;
+  font-weight:800;
+  margin-bottom:10px;
+}
+
+.hero p{
+  font-size:15px;
+  opacity:.9;
+}
+
+/* MAIN */
+.container{
+  width:92%;
+  max-width:1000px;
+  margin:auto;
+}
+
+/* CARD */
+.card{
+  background:rgba(255,255,255,0.9);
+  backdrop-filter:blur(18px);
+  margin-top:-70px;
+  border-radius:var(--radius);
+  padding:28px;
+  box-shadow:var(--shadow);
+  position:relative;
+  z-index:10;
+}
+
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.info-item{
+  display:flex;
+  align-items:center;
+  padding:18px;
+  border-radius:20px;
+  background:#fafaff;
+}
+
+.icon{
+  min-width:56px;
+  height:56px;
+  border-radius:18px;
+  background:linear-gradient(135deg,var(--primary),var(--primary2));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-size:22px;
+  margin-right:16px;
+}
+
+.label{font-size:13px;color:var(--muted);}
+.value{font-size:16px;font-weight:700;}
+
+/* TABS */
+.tabs{
+  display:flex;
+  gap:10px;
+  margin-top:35px;
+  margin-bottom:20px;
+}
+
+.tab{
+  flex:1;
+  padding:16px;
+  border-radius:16px;
+  background:white;
+  text-align:center;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.tab.active{
+  background:linear-gradient(135deg,var(--primary),var(--primary2));
+  color:white;
+}
+
+.tab-content{
+  display:none;
+  background:white;
+  padding:28px;
+  border-radius:24px;
+  box-shadow:var(--shadow);
+  margin-bottom:100px;
+}
+
+.tab-content.active{
+  display:block;
+}
+
+/* BUTTON FIX */
+.floating-btn{
+  position:fixed;
+  left:50%;
+  bottom:22px;
+  transform:translateX(-50%);
+  padding:18px 34px;
+  border-radius:999px;
+  background:linear-gradient(135deg,var(--primary),var(--primary2));
+  color:white;
+  font-weight:700;
+  cursor:pointer;
+  width:90%;
+  max-width:420px;
+  border:none;
+  z-index:9999;
+  box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* TEXT */
+h3{margin-bottom:15px;}
+p{margin-bottom:15px;}
+li{margin-bottom:10px;}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="bg-blur"></div>
+
+<section class="hero">
+<div class="hero-content">
+
+<img src="LOGO-KAMU.png" class="logo">
+
+<div class="badge">🎟️ Official Concert Experience</div>
+<h1>POLIPONI 2026</h1>
+<p>Sheila On 7 • Bali United Training Center</p>
+
+</div>
+</section>
+
+<div class="container">
+
+<div class="card">
+
+<div class="info-grid">
+
+<div class="info-item">
+<div class="icon">📅</div>
+<div>
+<div class="label">Tanggal</div>
+<div class="value">04 Juli 2026</div>
+</div>
+</div>
+
+<div class="info-item">
+<div class="icon">⏰</div>
+<div>
+<div class="label">Jam</div>
+<div class="value">14:00 - 23:00</div>
+</div>
+</div>
+
+<div class="info-item">
+<div class="icon">📍</div>
+<div>
+<div class="label">Lokasi</div>
+<div class="value">Bali United Training Center</div>
+</div>
+</div>
+
+</div>
+
+<div class="tabs">
+<div class="tab active" onclick="openTab(0)">Deskripsi</div>
+<div class="tab" onclick="openTab(1)">Syarat & Ketentuan</div>
+</div>
+
+<div class="tab-content active">
+<h3>Tentang Event</h3>
+
+<p><b>POLIPONI 2026</b> menghadirkan pengalaman konser musik premium dengan penampilan spesial dari <b>Sheila On 7</b>.</p>
+
+<p>Diselenggarakan di <b>Bali United Training Center</b>, dengan konsep festival modern dan visual spektakuler.</p>
+
+<p>Didukung oleh promotor <b>LETRALIVE</b>.</p>
+
+</div>
+
+<div class="tab-content">
+<h3>Syarat & Ketentuan</h3>
+
+<ul>
+<li>Tiket hanya berlaku untuk 1 orang dan 1 kali masuk.</li>
+<li>E-ticket wajib ditunjukkan saat masuk venue.</li>
+<li>Tiket tidak dapat dikembalikan.</li>
+<li>Wajib membawa identitas resmi.</li>
+<li>Dilarang membawa barang terlarang.</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+<button class="floating-btn" onclick="beliTiket()">
+🎟️ Beli Tiket Sekarang
+</button>
+
+<script>
+
+function openTab(index){
+const tabs=document.querySelectorAll('.tab');
+const contents=document.querySelectorAll('.tab-content');
+
+tabs.forEach((tab,i)=>tab.classList.toggle('active',i===index));
+contents.forEach((c,i)=>c.classList.toggle('active',i===index));
+}
+
+function beliTiket(){
+window.location.href="https://alyssamutiara3-cyber.github.io/CATEGORY-TIKET/";
+}
+
+</script>
+
+</body>
+</html>
